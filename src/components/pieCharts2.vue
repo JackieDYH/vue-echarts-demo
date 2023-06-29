@@ -1,14 +1,14 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-28 21:19:51
- * @LastEditTime: 2023-06-29 12:00:50
+ * @LastEditTime: 2023-06-29 12:55:43
  * @LastEditors: Jackie
  * @Description: pie圆形图标
  * @FilePath: /vue-echarts-demo/src/components/pieCharts2.vue
  * @version: 
 -->
 <template>
-  <div id="myEcharts2" :style="{ width: '100%', height: '100%' }"></div>
+  <div ref="myEcharts" :style="{ width: '100%', height: '100%' }"></div>
 </template>
   
   <script setup>
@@ -48,11 +48,13 @@ const showTitle = (e) => {
 };
 
 let myChart = ref(null);
+const myEcharts = ref(null);
 
 const initChart = () => {
-  echarts.init(document.getElementById("myEcharts2")).dispose();
-  let chartDom = document.getElementById("myEcharts2");
-  myChart.value = echarts.init(chartDom);
+  // echarts.init(document.getElementById("myEcharts2")).dispose();
+  // let chartDom = document.getElementById("myEcharts2");
+  echarts.init(myEcharts.value).dispose();
+  myChart.value = echarts.init(myEcharts.value);
 
   // 给饼图添加事件
   // 当区域高亮时隐藏title，比如当鼠标移动到legend上时
@@ -86,8 +88,10 @@ const initChart = () => {
             return sum + item.value;
           }, 0)
         ),
-      top: "215px",
+      top: "180px",
       left: "295px",
+      // x: "center",
+      // y: "center",
       textAlign: "center",
       textStyle: {
         color: "#000",
@@ -126,9 +130,13 @@ const initChart = () => {
     //   },
     // },
     legend: {
-      // type: 'scroll',
+      // type: "scroll",
       show: true,
-      top: "30%",
+      // top: "28%",
+      left: "right",
+      y: "center",
+      // top: "center",
+      selectedMode: false, // 控制是否可以通过点击图例改变系列的显示状态
       orient: "vertical", // 布局方式，默认为水平布局，可选为：'horizontal' ¦ 'vertical'
       // x: "right", // 水平安放位置，默认为全图居中，可选为：
       // 'center' ¦ 'left' ¦ 'right'
@@ -138,18 +146,19 @@ const initChart = () => {
       // ¦ {number}（y坐标，单位px）
       // padding: [0, 0, 0, 10],
       align: "left", //图例文字在右边
-      itemGap: 10, // 图例间隙
+      itemGap: 20, // 图例间隙
+
       textStyle: {
         //图例文字的样式
         color: "#333",
         fontSize: "16px",
-        lineHeight: 14,
+        // lineHeight: 14,
         // rich: {
         //   a: {
         //     verticalAlign: "middle",//top、middle、bottom
         //   },
         // },
-        padding: [0, 0, 0, 20],
+        // padding: [0, 0, 0, 20],
       },
       data: myData.data.map((item) => item.name), //图例组件
       formatter: (name) => {

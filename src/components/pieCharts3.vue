@@ -1,14 +1,14 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 12:00:15
- * @LastEditTime: 2023-06-29 12:00:30
+ * @LastEditTime: 2023-06-29 12:35:54
  * @LastEditors: Jackie
  * @Description: pie圆形图标
  * @FilePath: /vue-echarts-demo/src/components/pieCharts3.vue
  * @version: 
 -->
 <template>
-  <div id="myEcharts3" :style="{ width: '100%', height: '100%' }"></div>
+  <div ref="myEcharts" :style="{ width: '100%', height: '100%' }"></div>
 </template>
   
   <script setup>
@@ -48,11 +48,13 @@ const showTitle = (e) => {
 };
 
 let myChart = ref(null);
+const myEcharts = ref(null);
 
 const initChart = () => {
-  echarts.init(document.getElementById("myEcharts3")).dispose();
-  let chartDom = document.getElementById("myEcharts3");
-  myChart.value = echarts.init(chartDom);
+  // echarts.init(document.getElementById("myEcharts3")).dispose();
+  // let chartDom = document.getElementById("myEcharts3");
+  echarts.init(myEcharts.value).dispose();
+  myChart.value = echarts.init(myEcharts.value);
 
   // 给饼图添加事件
   // 当区域高亮时隐藏title，比如当鼠标移动到legend上时
