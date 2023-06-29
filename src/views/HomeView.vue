@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-06-28 21:26:17
+ * @LastEditTime: 2023-06-29 12:01:50
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue-echarts-demo/src/views/HomeView.vue
@@ -12,7 +12,12 @@
     <h1>This is an home page</h1>
     <LineCharts />
     <PieCharts />
-    <PieCharts2 />
+    <div class="charts2">
+      <PieCharts2 />
+    </div>
+    <div class="charts2">
+      <PieCharts3 />
+    </div>
   </div>
 </template>
 
@@ -20,4 +25,14 @@
 import LineCharts from "@/components/lineCharts.vue";
 import PieCharts from "@/components/pieCharts.vue";
 import PieCharts2 from "@/components/pieCharts2.vue";
+import PieCharts3 from "@/components/pieCharts3.vue";
 </script>
+<style lang="scss" scoped>
+.home {
+  margin: 0 auto;
+  .charts2 {
+    width: 600px;
+    height: 500px;
+  }
+}
+</style>

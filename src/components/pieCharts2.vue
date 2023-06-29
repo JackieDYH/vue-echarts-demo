@@ -1,14 +1,14 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-28 21:19:51
- * @LastEditTime: 2023-06-28 21:19:53
+ * @LastEditTime: 2023-06-29 12:00:50
  * @LastEditors: Jackie
  * @Description: pie圆形图标
  * @FilePath: /vue-echarts-demo/src/components/pieCharts2.vue
  * @version: 
 -->
 <template>
-  <div id="myEcharts3" :style="{ width: '600px', height: '600px' }"></div>
+  <div id="myEcharts2" :style="{ width: '100%', height: '100%' }"></div>
 </template>
   
   <script setup>
@@ -40,9 +40,9 @@ const showTitle = (e) => {
   myChart.value.setOption({
     title: {
       text: "总数量\n2323",
-      top: "215px",
-      left: "295px",
-      textAlign: "center",
+      // top: "215px",
+      // left: "295px",
+      // textAlign: "center",
     },
   });
 };
@@ -50,8 +50,8 @@ const showTitle = (e) => {
 let myChart = ref(null);
 
 const initChart = () => {
-  echarts.init(document.getElementById("myEcharts3")).dispose();
-  let chartDom = document.getElementById("myEcharts3");
+  echarts.init(document.getElementById("myEcharts2")).dispose();
+  let chartDom = document.getElementById("myEcharts2");
   myChart.value = echarts.init(chartDom);
 
   // 给饼图添加事件
@@ -95,6 +95,28 @@ const initChart = () => {
         // lineHeight: 30,
       },
     },
+    // title: [
+    //   {
+    //     text: "交易总数",
+    //     x: "center",
+    //     top: "35%",
+    //     textStyle: {
+    //       color: "#000",
+    //       fontSize: 20,
+    //       fontWeight: "bold",
+    //     },
+    //   },
+    //   {
+    //     text: "1223",
+    //     x: "center",
+    //     top: "38%",
+    //     textStyle: {
+    //       fontSize: "26",
+    //       color: "#000",
+    //       //fontFamily: "siyuanyahei_yingwen_shuzi",
+    //     },
+    //   },
+    // ],
     // legend: {
     //   top: "5%",
     //   left: "center",
@@ -104,19 +126,30 @@ const initChart = () => {
     //   },
     // },
     legend: {
-      // show: true,
-      orient: "horizontal", // 布局方式，默认为水平布局，可选为：'horizontal' ¦ 'vertical'
-      x: "right", // 水平安放位置，默认为全图居中，可选为：
+      // type: 'scroll',
+      show: true,
+      top: "30%",
+      orient: "vertical", // 布局方式，默认为水平布局，可选为：'horizontal' ¦ 'vertical'
+      // x: "right", // 水平安放位置，默认为全图居中，可选为：
       // 'center' ¦ 'left' ¦ 'right'
       // ¦ {number}（x坐标，单位px）
-      y: "bottom", // 垂直安放位置，默认为全图顶端，可选为：
+      // y: "center", // 垂直安放位置，默认为全图顶端，可选为：
       // 'top' ¦ 'bottom' ¦ 'center'
       // ¦ {number}（y坐标，单位px）
-      // padding: [0, 20, 0, 0],
+      // padding: [0, 0, 0, 10],
+      align: "left", //图例文字在右边
+      itemGap: 10, // 图例间隙
       textStyle: {
         //图例文字的样式
         color: "#333",
         fontSize: "16px",
+        lineHeight: 14,
+        // rich: {
+        //   a: {
+        //     verticalAlign: "middle",//top、middle、bottom
+        //   },
+        // },
+        padding: [0, 0, 0, 20],
       },
       data: myData.data.map((item) => item.name), //图例组件
       formatter: (name) => {
@@ -153,6 +186,13 @@ const initChart = () => {
     //     height: 30,
     //     fontSize: 18,
     //   },
+    // },
+    // grid: {
+    //   top: "6%", //柱状图距离父容器div顶端的距离
+    //   left: "2%", //柱状图距离父容器div左端的距离
+    //   right: "15%", //柱状图距离父容器div右端的距离
+    //   bottom: "0%", //柱状图距离父容器div底端的距离
+    //   containLabel: true, //grid 区域是否包含坐标轴的刻度标签
     // },
     series: [
       {

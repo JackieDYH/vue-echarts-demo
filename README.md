@@ -67,6 +67,10 @@ theme = {
 
    // 图例
    legend: {
+       top:"30%",
+       bottom: '5%',//图例距离整个容器底部的距离
+       right: '5%',//图例距离整个容器底部的距离
+       left: 'center',//图例距离整个容器左边
        orient: 'horizontal',      // 布局方式，默认为水平布局，可选为：
                                   // 'horizontal' ¦ 'vertical'
        x: 'center',               // 水平安放位置，默认为全图居中，可选为：
@@ -82,11 +86,52 @@ theme = {
                                   // 接受数组分别设定上右下左边距，同css
        itemGap: 10,               // 各个item之间的间隔，单位px，默认为10，
                                   // 横向布局时为水平间隔，纵向布局时为纵向间隔
+       con: "circle",//设置图例图标的形状为实心圆，这个不填，默认是矩形
        itemWidth: 20,             // 图例图形宽度
        itemHeight: 14,            // 图例图形高度
        textStyle: {
            color: '#333'          // 图例文字颜色
-       }
+       },
+        // data: ['完成', '较好', '一般', '较差', '无进展'],//图例文字内容
+        // show: true, //是否显示
+        // icon: "circle",//图例样式
+        // top: "55%", // 组件离容器的距离
+        // bottom:"20%", // 组件离容器的距离
+        // left 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比，也可以是 'left', 'center', 'right'
+        // right: "5%",
+        // left:"10%" // // 组件离容器的距离
+        // padding: 5, // 图例内边距
+        // itemWidth: 6, // 图例标记的图形宽度。
+        // itemGap: 20, // 图例每项之间的间隔。
+        // itemHeight: 14, // 图例标记的图形高度。
+        // selectedMode: false, // 图例选择的模式，控制是否可以通过点击图例改变系列的显示状态。默认开启图例选择，可以设成 false 关闭。
+        // inactiveColor: "#fffddd", // 图例关闭时的颜色。
+        // textStyle: {//图例的公用文本样式。
+          // color: "#aabbcc", // 文字的颜色。
+          // fontStyle: "normal", // 文字字体的风格。'italic'
+          // fontWeight: "normal", // 文字字体的粗细。 'normal' 'bold' 'bolder' 'lighter' 100 | 200 | 300 | 400...
+          // fontFamily: "sans-serif", // 文字的字体系列。
+          // fontSize: 12, // 文字的字体大小。
+          // lineHeight: 20, // 行高。
+          // backgroundColor: "transparent", // 文字块背景色。
+          // borderColor: "transparent", // 文字块边框颜色。
+          // borderWidth: 0, // 文字块边框宽度。
+          // borderRadius: 0, // 文字块的圆角。
+          // padding: 0, // 文字块的内边距
+          // shadowColor: "transparent", // 文字块的背景阴影颜色
+          // shadowBlur: 0, // 文字块的背景阴影长度。
+          // shadowOffsetX: 0, // 文字块的背景阴影 X 偏移。
+          // shadowOffsetY: 0, // 文字块的背景阴影 Y 偏移。
+          // // width: 50, // 文字块的宽度。 默认
+          // // height: 40, // 文字块的高度 默认
+          // textBorderColor: "transparent", // 文字本身的描边颜色。
+          // textBorderWidth: 0, // 文字本身的描边宽度。
+          // textShadowColor: "transparent", // 文字本身的阴影颜色。
+          // textShadowBlur: 0, // 文字本身的阴影长度。
+          // textShadowOffsetX: 0, // 文字本身的阴影 X 偏移。
+          // textShadowOffsetY: 0, // 文字本身的阴影 Y 偏移。
+        // }
+
    },
 
    // 值域
