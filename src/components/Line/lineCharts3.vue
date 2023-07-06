@@ -1,18 +1,14 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-06 12:44:25
- * @LastEditTime: 2023-07-06 14:08:57
+ * @LastEditTime: 2023-07-06 20:06:28
  * @LastEditors: Jackie
  * @Description: 曲线图传参
  * @FilePath: /vue-echarts-demo/src/components/Line/lineCharts3.vue
  * @version: 
 -->
 <template>
-  <div
-    class="line-chart"
-    ref="myEcharts"
-    :style="{ width: '100%', height: '100%' }"
-  ></div>
+  <div class="line-chart" ref="myEcharts"></div>
 </template>
 
 <script setup>
@@ -101,7 +97,12 @@ const initChart = (data, showShadow = true) => {
     },
     yAxis: {
       name: '',
-      type: 'value'
+      type: 'value',
+      axisLabel: {
+        show: true,
+        interval: 'auto',
+        formatter: '{value}%'
+      }
       // show: false, //取消显示坐标轴,坐标轴刻度,坐标值(如果是y轴,默认的网格线也会取消显示)
       // splitLine: {
       //   show: false,
@@ -112,9 +113,6 @@ const initChart = (data, showShadow = true) => {
       // axisLine: {
       //   show: false
       // },
-      // axisLabel: {
-      //   show: false// 显示坐标
-      // }
       // axisTick: {
       //   show: false //隐藏y轴刻度
       // }
@@ -123,29 +121,63 @@ const initChart = (data, showShadow = true) => {
       trigger: 'axis',
       show: true,
       // showContent: false,
+      backgroundColor: '#333',
+      textStyle: {
+        color: '#fff',
+        fontSize: '12px',
+        fontWeight: '600'
+      },
       axisPointer: {
-        type: 'cross', //'line',
+        type: 'cross', // 默认为直线，可选为：'line' | 'shadow' 'cross'
         // axis: 'x',
         lineStyle: {
           color: 'rgba(109, 180, 202, 0.3)'
         }
+      },
+      //   formatter: '{a}: {b}<br />{c}: {d}: {e}'
+      formatter: function (params) {
+        // <i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>
+        // ${console.log(params[0])}
+        return `<div style="width:208px">
+              <p>${params[0].name}</p>
+              <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
+              <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>
+                累计收益率:</span>
+              <span>${params[0].data.sy}</span>
+              </p>
+              <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
+                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>累计收益额(USDT):</span>
+              <span>${params[0].data.value}</span>
+              </p>
+              <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
+                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>当日收益率:</span>
+              <span>${params[0].data.sy}</span>
+              </p>
+          </div>`;
       }
     },
     grid: {
       top: '4%',
       left: '2%',
       right: '2%',
-      bottom: '8%',
+      bottom: '2%',
       containLabel: true
     },
     series: [
       {
-        data: data.map((item) => item.value), //[820, 932, 901, 934, 1290, 1330, 1320],
+        data: data, //data.map((item) => item.value), //[820, 932, 901, 934, 1290, 1330, 1320],
         type: 'line',
         smooth: true,
         symbol: 'circle',
         smooth: true,
         sampling: 'average',
+        // label: {
+        //   show: true,
+        //   position: 'top',
+        //   formatter: function (params) {
+        //     return params.value + '%';
+        //   }
+        // },
         itemStyle: {
           color: color,
           borderWidth: 2,
@@ -166,10 +198,6 @@ const initChart = (data, showShadow = true) => {
   };
   option && myChart.setOption(option);
   window.addEventListener('resize', myChart.resize);
-
-  //   window.addEventListener('resize', () => {
-  //     myChart?.resize();
-  //   });
 };
 const getMockData = () => {
   return new Array(20).fill('').map((item, index) => {
@@ -200,13 +228,14 @@ const getColor = (list) => {
 };
 /**
  * 设置曲线阴影颜色
+ * 右/下/左/上
  * @param {*} list
  */
 const getAreaStyle = (list) => {
   const upColor = new echarts.graphic.LinearGradient(0, 0, 0, 1, [
     {
       offset: 0,
-      color: 'rgba(17,195,132,0.31)'
+      color: 'rgba(17,195,132,0.6)'
     },
     {
       offset: 1,
@@ -216,7 +245,7 @@ const getAreaStyle = (list) => {
   const downColor = new echarts.graphic.LinearGradient(0, 0, 0, 1, [
     {
       offset: 0,
-      color: 'rgba(217,61,87,0.31)'
+      color: 'rgba(217,61,87,0.6)'
     },
     {
       offset: 1,
@@ -239,4 +268,9 @@ const getAreaStyle = (list) => {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.line-chart {
+  width: 100%;
+  height: 100%;
+}
+</style>

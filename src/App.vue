@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-06-29 20:40:52
+ * @LastEditTime: 2023-07-06 19:49:22
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue-echarts-demo/src/App.vue
@@ -10,7 +10,8 @@
 <template>
   <nav>
     <router-link to="/">PIE</router-link> |
-    <router-link to="/about">LINE</router-link>
+    <router-link to="/about">LINE</router-link> |
+    <router-link to="/bar">BAR</router-link> |
   </nav>
   <router-view />
 </template>
