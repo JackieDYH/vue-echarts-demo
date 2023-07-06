@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-06 19:55:01
- * @LastEditTime: 2023-07-06 20:51:01
+ * @LastEditTime: 2023-07-06 21:14:46
  * @LastEditors: Jackie
  * @Description: 柱状图
  * @FilePath: /vue-echarts-demo/src/components/Bar/BarCharts3.vue
@@ -54,10 +54,28 @@ const initChart = (data) => {
   const option = {
     xAxis: {
       type: 'category',
+      boundaryGap: ['0%', '0%'],
+      axisLine: {
+        show: false
+      },
+      axisTick: {
+        show: false //隐藏x轴刻度
+      },
+      splitLine: {
+        show: false //隐藏x轴线
+      },
+      // boundaryGap: false, //到边界
       data: props.data.map((item) => item.name) //['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
       type: 'value'
+    },
+    grid: {
+      top: '4%',
+      left: '4%',
+      right: '4%',
+      bottom: '2%',
+      containLabel: true
     },
     series: [
       {
