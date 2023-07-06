@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-06 19:55:01
- * @LastEditTime: 2023-07-06 20:15:23
+ * @LastEditTime: 2023-07-06 20:51:01
  * @LastEditors: Jackie
  * @Description: 柱状图
  * @FilePath: /vue-echarts-demo/src/components/Bar/BarCharts3.vue
@@ -93,6 +93,31 @@ const initChart = (data) => {
     ],
     tooltip: {
       trigger: 'axis',
+      show: true,
+      // showContent: false,
+      backgroundColor: '#333',
+      textStyle: {
+        color: '#fff',
+        fontSize: '12px',
+        fontWeight: '600'
+      },
+      axisPointer: {
+        type: 'cross', // 默认为直线，可选为：'line' | 'shadow' 'cross'
+        // axis: 'x',
+        lineStyle: {
+          type: 'solid', //默认值
+          color: 'rgba(109, 180, 202, 0.3)'
+        },
+        label: {
+          color: '#fff',
+          backgroundColor: 'rgb(51,51,51)'
+        },
+        crossStyle: {
+          //默认值，
+          color: 'rgba(255,140,0,0.3)', //默认值
+          type: 'solid' //默认值
+        }
+      },
       // formatter: "{b0}<br/>"+that.defaultName+"：{c0}<br/>"+ this.legendName + "：{c1}",
       formatter: function (params, ticket, callback) {
         // console.log(params, 8888);

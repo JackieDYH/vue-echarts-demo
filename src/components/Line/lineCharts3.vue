@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-06 12:44:25
- * @LastEditTime: 2023-07-06 20:06:28
+ * @LastEditTime: 2023-07-06 20:48:28
  * @LastEditors: Jackie
  * @Description: 曲线图传参
  * @FilePath: /vue-echarts-demo/src/components/Line/lineCharts3.vue
@@ -141,16 +141,16 @@ const initChart = (data, showShadow = true) => {
         return `<div style="width:208px">
               <p>${params[0].name}</p>
               <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
-              <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>
+              <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;margin-right:6px;"></i>
                 累计收益率:</span>
               <span>${params[0].data.sy}</span>
               </p>
               <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
-                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>累计收益额(USDT):</span>
+                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;margin-right:6px;"></i>累计收益额(USDT):</span>
               <span>${params[0].data.value}</span>
               </p>
               <p style="padding:2px 0;display: flex;justify-content: space-between;align-items: center;">
-                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;"></i>当日收益率:</span>
+                <span style="display: flex;align-items: center;"><i style="display:inline-block;border-radius:50%;width:4px;height:4px;background-color: #0ECB81;margin-right:6px;"></i>当日收益率:</span>
               <span>${params[0].data.sy}</span>
               </p>
           </div>`;
