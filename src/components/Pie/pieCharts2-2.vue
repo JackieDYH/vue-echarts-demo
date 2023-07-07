@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 14:57:41
+ * @LastEditTime: 2023-07-07 15:06:58
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -237,11 +237,26 @@ const initChart = () => {
         emphasis: {
           label: {
             show: true,
-            formatter: `{b}\n{c}`,
+            formatter: `{num|$ {c}}\n{title|{b}}`,
             fontSize: '24px', //24 直接写有放大的效果
             fontWeight: 'bold',
             // color: () => {},
-            lineHeight: 30
+            lineHeight: 30,
+            rich: {
+              num: {
+                color: '#000',
+                fontFamily: 'DIN',
+                fontSize: '36px',
+                fontWeight: '500',
+                paddingBottom: '16px'
+              },
+              title: {
+                color: '#868E9B',
+                fontFamily: 'PingFang SC',
+                fontSize: '16px',
+                fontWeight: '500'
+              }
+            }
           },
           itemStyle: {
             // 高亮时点的颜色。
