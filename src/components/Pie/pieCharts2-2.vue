@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 11:52:14
+ * @LastEditTime: 2023-07-07 13:59:22
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -59,10 +59,10 @@ const myEcharts = ref(null);
 // 把配置和数据
 const myData = {
   data: [
-    { value: 335, name: '直接访问' },
-    { value: 310, name: '邮件营销' },
+    { value: 335, name: '访问' },
+    { value: 310, name: '营销' },
     { value: 234, name: '联盟广告' },
-    { value: 135, name: '视频广告' },
+    { value: 135, name: '广告' },
     { value: 1548, name: '搜索引擎' }
   ]
 };
@@ -170,15 +170,26 @@ const initChart = () => {
 
       textStyle: {
         //图例文字的样式
-        color: '#333',
+        fontWeight: '700',
+        color: '#000',
         fontSize: '16px',
         // 文字块背景色，一定要加上，否则对齐不会生效
         backgroundColor: 'transparent',
         rich: {
           // 下方数据配置部分要 {a|name}
-          a: {
-            width: 200
-            // verticalAlign: "middle", //top、middle、bottom
+          orgname: {
+            fontSize: '16px',
+            width: 70,
+            color: '#000',
+            fontWeight: '700'
+          },
+          count: {
+            fontSize: '16px',
+            verticalAlign: 'top', //top、middle、bottom
+            align: 'center',
+            color: '#000',
+            padding: [0, 0, 0, 15],
+            fontWeight: '500'
           }
         }
         // lineHeight: 14,
@@ -194,7 +205,7 @@ const initChart = () => {
             return;
           }
         });
-        return `{a|${name}}: ${num}`;
+        return `{orgname|${name}}{count|${num}}`;
         // return `${name.padEnd(maxLength + 2, ' ')}: ${num}`;
       }
     },
