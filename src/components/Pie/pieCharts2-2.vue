@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 10:57:27
+ * @LastEditTime: 2023-07-07 11:49:11
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -165,13 +165,17 @@ const initChart = () => {
       textStyle: {
         //图例文字的样式
         color: '#333',
-        fontSize: '16px'
+        fontSize: '16px',
+        // 文字块背景色，一定要加上，否则对齐不会生效
+        backgroundColor: 'transparent',
+        rich: {
+          // 下方数据配置部分要 {a|name}
+          a: {
+            width: 200
+            // verticalAlign: "middle", //top、middle、bottom
+          }
+        }
         // lineHeight: 14,
-        // rich: {
-        //   a: {
-        //     verticalAlign: "middle", //top、middle、bottom
-        //   },
-        // },
         // padding: [0, 0, 0, 20],
       },
       data: myData.data.map((item) => item.name), //图例组件
@@ -184,7 +188,7 @@ const initChart = () => {
             return;
           }
         });
-        return name + '：' + num;
+        return `{a|${name}}: ${num}`;
       }
     },
     series: [
