@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 11:49:11
+ * @LastEditTime: 2023-07-07 11:52:14
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -70,6 +70,12 @@ const myData = {
 const initChart = () => {
   echarts.init(myEcharts.value).dispose();
   myChart = echarts.init(myEcharts.value);
+
+  // 查找最长字符串
+  // const maxLength = data.reduce(
+  //   (max, str) => Math.max(max, str.name.length),
+  //   0
+  // );
 
   // 给饼图添加事件
   // 当区域高亮时隐藏title，比如当鼠标移动到legend上时
@@ -189,6 +195,7 @@ const initChart = () => {
           }
         });
         return `{a|${name}}: ${num}`;
+        // return `${name.padEnd(maxLength + 2, ' ')}: ${num}`;
       }
     },
     series: [
