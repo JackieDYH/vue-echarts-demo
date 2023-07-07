@@ -1,10 +1,10 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-06-29 20:33:54
+ * @LastEditTime: 2023-07-07 10:57:27
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
- * @FilePath: /vue-echarts-demo/src/components/pieCharts2-2.vue
+ * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
  * @version: 
 -->
 <template>
@@ -147,6 +147,7 @@ const initChart = () => {
       // top: "28%",
       y: 'center',
       left: 'right',
+      icon: 'circle', //控制形状类型包括 circle，rect ，roundRect，triangle，diamond，pin，arrow，none
       // selectedMode: false, // 控制是否可以通过点击图例改变系列的显示状态
       orient: 'vertical', // 布局方式，默认为水平布局，可选为：'horizontal' ¦ 'vertical'
       // x: "right", // 水平安放位置，默认为全图居中，可选为：
@@ -158,6 +159,8 @@ const initChart = () => {
       padding: [0, 20, 0, 10],
       align: 'left', //图例文字在右边
       itemGap: 20, // 图例间隙
+      // itemWidth: 10, // 设置宽度
+      // itemHeight: 10, // 设置高度
 
       textStyle: {
         //图例文字的样式
