@@ -177,7 +177,7 @@ const initChart = () => {
         backgroundColor: 'transparent',
         // 富文本样式-定义在使用的同级
         rich: {
-          // 下方数据配置部分要 {a|name}
+          // 下方数据配置部分要 `{a|{c}}\n{b}` `{orgname|${name}}`
           orgname: {
             fontSize: '16px',
             width: 70,
