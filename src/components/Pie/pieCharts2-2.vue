@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 14:23:47
+ * @LastEditTime: 2023-07-07 14:57:41
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -175,6 +175,7 @@ const initChart = () => {
         fontSize: '16px',
         // 文字块背景色，一定要加上，否则对齐不会生效
         backgroundColor: 'transparent',
+        // 富文本样式-定义在使用的同级
         rich: {
           // 下方数据配置部分要 {a|name}
           orgname: {
@@ -229,7 +230,8 @@ const initChart = () => {
         },
         label: {
           show: false,
-          position: 'center'
+          position: 'center',
+          formatter: 'This is a normal label.'
         },
         // 鼠标悬浮时中心位置显示对应区域的信息
         emphasis: {
@@ -240,6 +242,10 @@ const initChart = () => {
             fontWeight: 'bold',
             // color: () => {},
             lineHeight: 30
+          },
+          itemStyle: {
+            // 高亮时点的颜色。
+            color: 'blue'
           }
         },
         labelLine: {
