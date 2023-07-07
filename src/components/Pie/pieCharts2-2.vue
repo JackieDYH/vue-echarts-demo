@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 14:10:45
+ * @LastEditTime: 2023-07-07 14:23:47
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -209,8 +209,8 @@ const initChart = () => {
         let total = myData.data.reduce((sum, item, index, array) => {
           return sum + item.value;
         }, 0);
-        let p = Math.round((num / total) * 100);
-
+        // 计算百分比
+        let p = Math.round((num / total) * 10000) / 100;
         return `{orgname|${name}}{count|$${num}} ${p}%`;
         // return `${name.padEnd(maxLength + 2, ' ')}: ${num}`;
       }
