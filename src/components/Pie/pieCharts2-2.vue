@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 13:59:22
+ * @LastEditTime: 2023-07-07 14:10:45
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -205,7 +205,13 @@ const initChart = () => {
             return;
           }
         });
-        return `{orgname|${name}}{count|${num}}`;
+
+        let total = myData.data.reduce((sum, item, index, array) => {
+          return sum + item.value;
+        }, 0);
+        let p = Math.round((num / total) * 100);
+
+        return `{orgname|${name}}{count|$${num}} ${p}%`;
         // return `${name.padEnd(maxLength + 2, ' ')}: ${num}`;
       }
     },
