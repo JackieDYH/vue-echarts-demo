@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-29 14:01:58
- * @LastEditTime: 2023-07-07 15:06:58
+ * @LastEditTime: 2023-07-07 15:16:19
  * @LastEditors: Jackie
  * @Description: pie圆形图标-中间显示对应数据-鼠标
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts2-2.vue
@@ -105,7 +105,7 @@ const initChart = () => {
       // top: "180px",
       // left: "295px",
       x: '34%',
-      y: '43%',
+      y: '40%',
       textAlign: 'center',
       textStyle: {
         color: '#000',
@@ -237,7 +237,7 @@ const initChart = () => {
         emphasis: {
           label: {
             show: true,
-            formatter: `{num|$ {c}}\n{title|{b}}`,
+            formatter: '{num|${c}}\n{b}',
             fontSize: '24px', //24 直接写有放大的效果
             fontWeight: 'bold',
             // color: () => {},
@@ -248,7 +248,7 @@ const initChart = () => {
                 fontFamily: 'DIN',
                 fontSize: '36px',
                 fontWeight: '500',
-                paddingBottom: '16px'
+                padding: [0, 0, 20, 0]
               },
               title: {
                 color: '#868E9B',
