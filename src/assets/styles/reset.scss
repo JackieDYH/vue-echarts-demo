@@ -1,0 +1,309 @@
+a, a[visited] {
+  color: inherit;
+  text-decoration: none;
+}
+body{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+
+img[src=""],
+img:not([src]) { 
+  display: none;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+// .el-button {
+//   border: none;
+// }
+
+// .el-input {
+//   --el-input-bg-color: transparent;
+//   --el-input-border-color: transparent;
+//   --el-input-focus-border-color: transparent;
+//   --el-input-hover-border-color: transparent;
+//   --el-disabled-bg-color: transparent;
+//   --el-disabled-border-color: transparent;
+//   --el-input-height: 100%;
+// }
+
+// .el-checkbox {
+//   --el-checkbox-bg-color: transparent;
+//   --el-checkbox-input-border: 1px solid #6C6C6C;
+//   --el-checkbox-checked-bg-color: #fff;
+//   --el-checkbox-checked-input-border-color: 1px solid #fff;
+//   --el-checkbox-checked-text-color: #fff;
+//   --el-checkbox-checked-icon-color: #000;
+//   --el-checkbox-input-border-color-hover: #fff;
+//   --el-checkbox-font-size: 12px;
+//   height: unset;
+//   color: #fff;
+//   font-weight: 400;
+
+//   .el-checkbox__inner::after {
+//     border-width: 2px;
+//   }
+//   .el-checkbox__input.is-checked{
+//     .el-checkbox__inner {
+//       border-color: transparent;
+//     }
+//   }
+// }
+
+// .el-select {
+//   --el-select-border-color-hover: transparent;
+//   --el-select-input-focus-border-color: transparent;
+// }
+
+// .el-overlay {
+//   backdrop-filter: blur(12.5px);
+//   .el-overlay-dialog {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     .el-dialog {
+//       --el-dialog-bg-color: #1a1a1a;
+//       --el-dialog-box-shadow: #1a1a1a;
+//       --el-dialog-padding-primary: 24px;
+//       --el-text-color-regular: #B8BDC5;
+//       --el-dialog-border-radius: 8px;
+//       max-height: 95%;
+//       overflow: auto;
+//       margin: 0;
+//       .el-dialog__header {
+//         .el-dialog__title {
+//           color: #fff;
+//           font-size: 20px;
+//           font-family: DIN-Medium, arial, sans-serif;
+//         }
+//         .el-dialog__headerbtn {
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           top: 8px;
+//           background-image: url(../images/dialog_close.png);
+//           background-repeat: no-repeat;
+//           background-size: 15px 15px;
+//           background-position: center;
+//           .el-icon.el-dialog__close {
+//             display: none;
+//           }
+//         }
+//       }
+
+//       .el-dialog__body {
+//         padding-top: 0;
+//       }
+//     }
+//     .el-dialog.light-dialog {
+//       --el-dialog-bg-color: #fff;
+//       .el-dialog__header {
+//         .el-dialog__title {
+//           color: #000;
+//         }
+//       }
+//     }
+//   }
+// }
+// .el-message {
+//   --el-message-bg-color:  #24282D;
+//   --el-message-border-color: #30353C;
+//   --el-message-text-color: white;
+//   --el-border-radius-base: 8px;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 24px;
+//   height: 90px;
+// }
+// .el-icon.el-message-icon--success {
+//   width: 30px;
+//   height: 30px;
+//   background-image: url('../images/success.svg');
+//   background-size: 100% 100%;
+  
+//   svg {
+//     display: none;
+//   }
+// }
+// .el-icon.el-message-icon--error {
+//   width: 30px;
+//   height: 30px;
+//   background-image: url('../images/failed.svg');
+//   background-size: 100% 100%;
+  
+//   svg {
+//     display: none;
+//   }
+// }
+
+// .el-pagination {
+//   --el-pagination-bg-color: transparent;
+//   --el-pagination-button-disabled-bg-color: transparent;
+//   --el-pagination-button-disabled-color: #909090;
+//   --el-pagination-hover-color: #fff;
+//   --el-pagination-button-color: #fff;
+//   .el-pager {
+//     .is-active {
+//       background-color: rgba(255, 255, 255, 0.2);
+//       border-radius: 50%;
+//     }
+//   }
+// }
+
+// .el-date-editor--daterange {
+//   --el-input-bg-color: transparent;
+//   --el-input-border-color: transparent;
+//   --el-input-hover-border-color: transparent;
+//   --el-input-focus-border-color: transparent;
+//   --el-date-editor-width: 200px;
+//   --el-input-placeholer-color: #5E6572;
+//   font-size: 12px;
+//   padding: 0;
+//   .el-range__icon {
+//     display: none;
+//   }
+//   .el-input__inner {
+//     font-family: DIN, arial, sans-serif;
+//     font-weight: 500;
+//   }
+//   .el-range-separator {
+//     color: #fff;
+//     font-size: 12px;
+//     padding: 0;
+//   }
+//   .el-range-input {
+//     font-size: 12px;
+//     font-family: DIN-Medium, arial, sans-serif;
+//     width: 90px;
+//     color: #fff;
+//   }
+// }
+
+// .el-breadcrumb{
+//   margin: 20px 0;
+//   height: 20px;
+//   line-height: 20px ;
+//   .el-breadcrumb__inner{
+//     font-size: 14px ;
+//     color: #909090;
+//     &.is-link{
+//       color: #fff;
+//     }
+//   }
+// }
+
+// .el-dropdown__popper .el-popper__arrow::before{
+//   display: none;
+// }
+// .el-dropdown__popper.el-popper{
+//   border-color: #2E2E2E;
+//   background-color:#2E2E2E ;
+// }
+
+// .el-dropdown__popper .el-dropdown-menu{
+//   background-color:#2E2E2E ;
+//   color: #fff;
+//   padding: 0;
+//   border-radius: 8px;
+// }
+// .el-dropdown__popper  .el-dropdown-menu__item{
+//   color: #fff;
+//   height: 50px;
+//   width: 138px;
+//   align-items: center;
+//   padding: 0 20px;
+// }
+// .el-dropdown-menu__item:focus{
+//   color: #B8BDC5 !important;
+//   background-color: rgba(83, 89, 97, 0.2) !important;
+// }
+
+// .el-pagination .btn-next .el-icon, .el-pagination .btn-prev .el-icon{
+//   font-size: 16PX;
+// }
+// .el-date-table td.disabled .el-date-table-cell{
+//   background-color: transparent;
+// }
+// // {
+// //   background:#2E2E2E
+// // }
+
+.tree-map-tooltip {
+  font-weight: 400;
+  padding: 10px 20px;
+  span {
+    font-weight: 600;
+    padding-left: 30px;
+  }
+}
+.line-bar-tooltip {
+  font-weight: 400;
+  padding: 10px 20px;
+  font-size: 14px;
+  .flex {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    &.hide {
+      display: none;
+    }
+    .text-content {
+      min-width: 102px;
+      margin-left: 8px;
+    }
+    .value {
+      font-weight: 600;
+      flex: 1;
+      text-align: right;
+    }
+    .logo {
+      width: 15px;
+      min-width: 12PX;
+      height: 15px;
+      min-height: 12PX;
+      border-radius: 50%;
+      background: url('./assets/images/charts/price.svg') 0 0 no-repeat;
+      background-size: 100% 100%;
+      &.exchange {
+        background: url('./assets/images/charts/exchange.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      &.bin {
+        background: url('./assets/images/charts/binance.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      &.okx {
+        background: url('./assets/images/charts/okx.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      &.bit {
+        background: url('./assets/images/charts/bitget.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

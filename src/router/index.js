@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-06 19:48:48
+ * @LastEditTime: 2023-09-25 09:57:55
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue-echarts-demo/src/router/index.js
@@ -29,6 +29,11 @@ const routes = [
     path: '/bar',
     name: 'bar',
     component: () => import('../views/BarView.vue')
+  },
+  {
+    path: '/chart',
+    name: 'chart',
+    component: () => import('../views/ChartView.vue')
   }
 ];
 
