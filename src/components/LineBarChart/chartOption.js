@@ -169,6 +169,7 @@ export function getOption(diskData, name, period) {
       {
         name: `${name}价格`,
         type: 'line',
+        smooth: true, //圆滑
         showSymbol: false, // 只有在 tooltip hover 的时候显示圆点
         yAxisIndex: 1,
         tooltip: {
