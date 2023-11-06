@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-11-06 14:34:52
- * @LastEditTime: 2023-11-06 14:36:00
+ * @LastEditTime: 2023-11-06 14:38:30
  * @LastEditors: Jackie
  * @Description: 饼图 - 鼠标悬浮显示中间统计数据 可用
  * @FilePath: /vue-echarts-demo/src/components/Pie/pieCharts6.vue
@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+import * as echarts from 'echarts';
 import { ref, onMounted, onUnmounted, defineProps, watch } from 'vue';
 const props = defineProps({
   data: {
@@ -63,8 +64,8 @@ let myChart = '';
 const myEcharts = ref(null);
 
 const initChart = (data) => {
-  window.echarts.init(myEcharts.value).dispose();
-  myChart = window.echarts.init(myEcharts.value);
+  echarts.init(myEcharts.value).dispose();
+  myChart = echarts.init(myEcharts.value);
 
   // 给饼图添加事件
   // 当区域高亮时隐藏title，比如当鼠标移动到legend上时
